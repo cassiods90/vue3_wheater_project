@@ -1,0 +1,13 @@
+{
+    "editor.rulers": [150],
+    "prettier.printWidth": 150,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4,
+    "css.lint.unknownAtRules": "ignore",
+    "scss.lint.unknownAtRules": "ignore"
+}, 
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
