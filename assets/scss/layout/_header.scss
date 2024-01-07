@@ -1,0 +1,62 @@
+.header {
+    // height: 60px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    .logo {
+        height: 60px;
+        svg {
+            width: 100%;
+            height: 100%;
+            max-width: 40px;
+        }
+        span {
+            margin-left: 20px;
+        }
+    }
+
+    .search {
+        height: 60px;
+        .search-inner {
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            svg {
+                width: 100%;
+                height: 100%;
+                max-width: 20px;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            input {
+                border: 0;
+                border-bottom: 2px solid $white;
+                outline: 0;
+                background: none;
+                width: 100%;
+                padding: 4px 0;
+                @include transition();
+                &::placeholder {
+                    color: $white;
+                }
+                &:focus-visible {
+                    border-bottom: 2px solid $baseColor;
+                }
+            }
+            .input-return {
+                position: absolute;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 20px 0;
+                width: 100%;
+                z-index: 10;
+                li {
+                    padding: 15px 20px;
+                    cursor: pointer;
+                    @include transition();
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.6);
+                    }
+                }
+            }
+        }
+    }
+}

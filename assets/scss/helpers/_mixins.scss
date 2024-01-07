@@ -1,9 +1,9 @@
 /* ----------  MIXINS STYLES ---------- */
 @mixin transition() {
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 @mixin transition2($property, $duration, $timing) {
@@ -202,8 +202,7 @@
             font-size: $min-font-size;
             @media screen and (min-width: $min-vw) {
                 font-size: calc(
-                    #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
-                        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+                    #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
                 );
             }
             @media screen and (min-width: $max-vw) {

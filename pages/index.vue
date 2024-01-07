@@ -1,17 +1,23 @@
 <template>
-    <div>
-        <h1 class="text bigtitle">Nuxt 3 Home</h1>
+    <div class="pages home-page">
+        <AppLoader v-if="selectedCities.loading" />
 
-        <br /><br />
+        <div class="page-title d-flex flex-column justify-content-center align-items-center">
+            <h1 class="text bigtitle">My Cities:</h1>
+        </div>
 
-        <HomePiniaExample />
-
-        <br /><br />
-
-        <HomeSwiperCarouselExample />
-
-        <br /><br />
+        <HomeCardsItems :value="citiesInfos" />
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { usePlacesInfos } from '@/stores/placesInfos'
+
+const selectedCities = usePlacesInfos()
+const citiesInfos = computed(() => selectedCities.getCitiesInfos)
+
+async function load() {
+    await selectedCities.loadCitiesFromLocalStorage()
+}
+onMounted(load)
+</script>

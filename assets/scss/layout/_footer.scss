@@ -1,0 +1,31 @@
+.footer-content {
+    .personal-link {
+        span {
+            padding-right: 10px;
+            @include transition();
+        }
+        svg,
+        path {
+            @include transition();
+        }
+        &:hover {
+            span {
+                color: $baseColor;
+            }
+            svg,
+            path {
+                fill: $baseColor;
+            }
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}

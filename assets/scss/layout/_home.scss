@@ -1,4 +1,210 @@
+.page-title {
+    padding: 50px 0 20px;
+}
+
+.cards-items {
+    .card-item {
+        position: relative;
+        margin: 10px 0;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        padding: 20px;
+        border-radius: 20px;
+        @include transition();
+        &:hover {
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 16px, rgba(255, 255, 255, 0.1) 0px 8px 24px, rgba(255, 255, 255, 0.1) 0px 16px 56px;
+        }
+        .card-item-inner {
+            height: 100%;
+            .card-buttons {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                .card-buttons-inner {
+                    margin: 0 -5px;
+                    .buttons-icon {
+                        margin: 0 5px;
+                        cursor: pointer;
+                        &.infos-icon {
+                            &:hover {
+                                svg,
+                                path {
+                                    fill: $baseColor;
+                                }
+                            }
+                        }
+                        &.delete-icon {
+                            &:hover {
+                                svg,
+                                path {
+                                    fill: red;
+                                }
+                            }
+                            svg,
+                            path {
+                                fill: $redIcons;
+                            }
+                        }
+
+                        svg {
+                            @include transition();
+                            width: 100%;
+                            height: 100%;
+                            max-width: 20px;
+                            max-height: 20px;
+                            path {
+                                @include transition();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-item-content {
+    height: 100%;
+    .content-left {
+        height: 100%;
+        .mainTemp {
+            padding: 30px 0 10px;
+        }
+    }
+    .content-right {
+        img {
+            max-width: 64px;
+            max-height: 64px;
+        }
+    }
+}
+
+.delete-card-modal {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    border: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    &.showHide {
+        display: none;
+    }
+    .delete-card-modal-inner {
+        background: $background-card;
+        padding: 60px;
+        border-radius: 20px;
+        box-shadow: rgba(255, 255, 255, 0.12) 0px 2px 4px 0px, rgba(255, 255, 255, 0.12) 0px 2px 16px 0px;
+        .delete-card-modal-content {
+            .delete-card-modal-buttons {
+                margin: 50px -15px 0;
+                span {
+                    cursor: pointer;
+                    margin: 0 15px;
+                    background: $baseColor;
+                    width: 130px;
+                    height: 50px;
+                    border-radius: 10px;
+                    @include transition();
+                    &:hover {
+                        background: $secColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.more-infos-modal {
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    border: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    &.showHide {
+        display: none;
+    }
+    .icon-close {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        &:hover {
+            svg,
+            path {
+                fill: red;
+            }
+        }
+        svg {
+            @include transition();
+            width: 100%;
+            height: 100%;
+            max-width: 30px;
+            max-height: 30px;
+            fill: $redIcons;
+            path {
+                @include transition();
+                fill: $redIcons;
+            }
+        }
+    }
+    .more-infos-modal-inner {
+        position: relative;
+        background: $background-card;
+        padding: 60px 30px;
+        border-radius: 20px;
+        box-shadow: rgba(255, 255, 255, 0.12) 0px 2px 4px 0px, rgba(255, 255, 255, 0.12) 0px 2px 16px 0px;
+    }
+}
+
+.card-item-hourly {
+    overflow-x: auto;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        height: 10px;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $baseColor;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $secColor;
+        border-radius: 10px;
+    }
+
+    .card-title {
+        padding: 50px 0 20px;
+    }
+
+    .hourly-items {
+        margin: 0 -20px;
+        .hourly-item {
+            padding: 0 20px;
+            .hourly-item-content {
+                padding-bottom: 10px;
+                .hourly-image {
+                    margin: 10px 0;
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+}
+
 @media (min-width: 768px) {
+    .more-infos-modal {
+        .more-infos-modal-inner {
+            padding: 60px;
+        }
+    }
 }
 
 @media (min-width: 992px) {

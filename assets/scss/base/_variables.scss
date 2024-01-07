@@ -2,12 +2,16 @@
 $white: #ffffff;
 $black: #000000;
 
-/* ---------- BACKGROUND COLORS ---------- */
-$background-black: #000;
-$background-black01: #121214;
+$baseColor: #2f474f;
+$secColor: #9fbcc6;
+$thirdColor: #d1a802;
+$fourthColor: #1488cc;
 
-$background-gradient-01: linear-gradient(90deg, #121214, #1e1e26);
-$background-gradient-02: linear-gradient(to right, #c9d6ff, #e2e2e2);
+$redIcons: #cb0000;
+
+/* ---------- BACKGROUND COLORS ---------- */
+$background-gradient-01: radial-gradient(circle at 45.2%, rgb(47, 71, 79) 32%, rgb(159, 188, 198) 83.6%);
+$background-card: linear-gradient(to bottom, $baseColor, $secColor);
 
 /* ---------- FONTS ---------- */
 $JosefinSansLight: 'JosefinSans-Light';
