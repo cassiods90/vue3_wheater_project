@@ -6,7 +6,8 @@
             <h1 class="text bigtitle">My Cities:</h1>
         </div>
 
-        <HomeCardsItems :value="citiesInfos" />
+        <HomeCardsItems :value="citiesInfos" v-if="citiesInfos.length > 0" />
+        <span class="text text-center" v-else>You haven't added any cities yet</span>
     </div>
 </template>
 

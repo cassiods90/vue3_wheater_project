@@ -141,10 +141,12 @@ export const usePlacesInfos = defineStore('placesInfos', {
 
         loadCitiesFromLocalStorage() {
             const savedCities = localStorage.getItem('cities')
-
+            console.log('savedCities: ', savedCities)
             if (savedCities) {
                 this.cities = JSON.parse(savedCities)
                 this.fetchWeatherInfoForCities()
+            } else {
+                this.loading = false
             }
             // console.log('load state cities from local storage: ', this.cities)
         },
